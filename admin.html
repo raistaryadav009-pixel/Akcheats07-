@@ -1,23 +1,400 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Admin Panel</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AK Cheats Shop</title>
+   
+  <!-- Adsterra Popunder -->
+  <script src="https://pl29570289.effectivecpmnetwork.com/a0/7f/92/a07f92f90c15046e32f0284f83758533.js"></script>
+
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* Background Glow */
+
+    body::before{
+      content:'';
+      position:absolute;
+      top:-100px;
+      left:-100px;
+      width:300px;
+      height:300px;
+      background:#00d9ff40;
+      filter:blur(120px);
+      z-index:-1;
+    }
+
+    body::after{
+      content:'';
+      position:absolute;
+      bottom:-100px;
+      right:-100px;
+      width:300px;
+      height:300px;
+      background:#005eff30;
+      filter:blur(120px);
+      z-index:-1;
+    }
+
+    .container{
+      max-width:500px;
+      margin:auto;
+      padding:20px;
+      min-height:100vh;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* HEADER */
+
+    .header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:45px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .logo-box{
+      width:55px;
+      height:55px;
+      border-radius:16px;
+      background:linear-gradient(135deg,#00d9ff,#0099ff);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:26px;
+      font-weight:800;
+      color:black;
+      box-shadow:0 0 20px #00d9ff55;
+    }
+
+    .logo-text{
+      line-height:20px;
+    }
+
+    .logo-text h2{
+      font-size:20px;
+      font-weight:700;
+    }
+
+    .logo-text span{
+      color:#9ca3af;
+      font-size:13px;
+    }
+
+    .login-btn{
+      background:#00d9ff;
+      color:black;
+      padding:13px 22px;
+      border-radius:14px;
+      font-weight:700;
+      font-size:15px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      box-shadow:0 0 20px #00d9ff40;
+    }
+
+    /* WELCOME */
+
+    .welcome{
+      border:1px solid #00d9ff50;
+      color:#00d9ff;
+      padding:14px;
+      text-align:center;
+      border-radius:50px;
+      font-weight:600;
+      margin-bottom:40px;
+      background:#00d9ff10;
+      box-shadow:0 0 20px #00d9ff20;
+    }
+
+    /* HERO */
+
+    .hero{
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:75px;
+      line-height:78px;
+      font-weight:800;
+      margin-bottom:25px;
+    }
+
+    .hero h1 span{
+      color:#00d9ff;
+    }
+
+    .hero p{
+      color:#cbd5e1;
+      font-size:19px;
+      line-height:34px;
+      margin-bottom:45px;
+    }
+
+    /* BUTTONS */
+
+    .main-btn{
+      width:100%;
+      border:none;
+      padding:24px;
+      border-radius:20px;
+      font-size:24px;
+      font-weight:700;
+      cursor:pointer;
+      margin-bottom:20px;
+      transition:0.3s;
+    }
+
+    .login-main{
+      background:#00d9ff;
+      color:black;
+      box-shadow:0 0 25px #00d9ff50;
+    }
+
+    .create-btn{
+      background:transparent;
+      border:2px solid #00d9ff;
+      color:white;
+    }
+
+    .main-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .main-btn i{
+      margin-right:10px;
+    }
+
+    /* SUPPORT */
+
+    .support-title{
+      text-align:center;
+      margin:35px 0 25px;
+      color:#00d9ff;
+      font-size:24px;
+      font-weight:700;
+    }
+
+    .support-box{
+      display:flex;
+      gap:15px;
+    }
+
+    .support-card{
+      flex:1;
+      background:#0f172a;
+      border:1px solid #1e293b;
+      border-radius:22px;
+      padding:28px 10px;
+      text-align:center;
+      transition:0.3s;
+      color:white;
+    }
+
+    .support-card:hover{
+      transform:translateY(-5px);
+      border-color:#00d9ff;
+      box-shadow:0 0 20px #00d9ff25;
+    }
+
+    .support-card i{
+      font-size:40px;
+      margin-bottom:14px;
+      color:#00d9ff;
+    }
+
+    .support-card h3{
+      font-size:18px;
+      font-weight:700;
+    }
+
+    /* FOOTER */
+
+    footer{
+      margin-top:45px;
+      text-align:center;
+      color:#94a3b8;
+      font-size:14px;
+    }
+
+    .footer-links{
+      margin-top:12px;
+    }
+
+    .footer-links a{
+      color:#00d9ff;
+      margin:0 8px;
+      font-size:14px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:600px){
+
+      .hero h1{
+        font-size:58px;
+        line-height:62px;
+      }
+
+      .hero p{
+        font-size:16px;
+        line-height:30px;
+      }
+
+      .main-btn{
+        font-size:20px;
+        padding:20px;
+      }
+
+    }
+
+  </style>
 </head>
+
 <body>
-<div class="container">
-<div class="card">
-<h1>Admin Panel</h1>
 
-<p>Total Users: 0</p>
-<p>Total Links: 0</p>
-<p>Total Earnings: $0</p>
+  <div class="container">
 
-<button>Manage Users</button>
-<button>Manage Ads</button>
-<button>Withdraw Requests</button>
+    <!-- HEADER -->
 
-</div>
-</div>
+    <div class="header">
+
+      <div class="logo">
+
+        <div class="logo-box">
+          AK
+        </div>
+
+        <div class="logo-text">
+          <h2>CHEATS SHOP</h2>
+          <span>Premium Store</span>
+        </div>
+
+      </div>
+
+      <a href="#" class="login-btn">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        LOGIN
+      </a>
+
+    </div>
+
+    <!-- WELCOME -->
+
+    <div class="welcome">
+      ● WELCOME TO MY SHOP
+    </div>
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+      <h1>
+        <span>AK</span> CHEATS<br>
+        <span>SHOP</span>
+      </h1>
+
+      <p>
+        Buy Cheapest Free Fire Mod Keys in India.<br>
+        Dominate the battleground with our<br>
+        premium undetectable scripts.
+      </p>
+
+      <!-- LOGIN BUTTON -->
+
+      <button class="main-btn login-main">
+        <i class="fa-solid fa-lock"></i>
+        LOGIN
+      </button>
+
+      <!-- CREATE BUTTON -->
+
+      <button class="main-btn create-btn">
+        <i class="fa-solid fa-user"></i>
+        CREATE ACCOUNT
+      </button>
+
+    </div>
+
+    <!-- SUPPORT -->
+
+    <div class="support-title">
+      SUPPORT US ON
+    </div>
+
+    <div class="support-box">
+
+      <!-- WHATSAPP -->
+
+      <a href="https://wa.me/918809309764"
+      class="support-card"
+      target="_blank">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        <h3>WHATSAPP</h3>
+
+      </a>
+
+      <!-- TELEGRAM -->
+
+      <a href="t.me/OFC_VORTEX"
+      class="support-card"
+      target="_blank">
+
+        <i class="fa-brands fa-telegram"></i>
+
+        <h3>TELEGRAM</h3>
+
+      </a>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      © 2025 AK CHEATS SHOP. All rights reserved.
+
+      <div class="footer-links">
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a>
+      </div>
+
+    </footer>
+
+  </div>
+
 </body>
 </html>
